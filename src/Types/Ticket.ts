@@ -1,6 +1,8 @@
 
 export type Tiket = {
-    Id_Ruta1: number;
-    id_Ruta2: number;
+    id: number
+    departurePoint: number;
+    ArrivalPoint: number;
+    Price:number;
   }
   

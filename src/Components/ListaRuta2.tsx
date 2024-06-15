@@ -3,7 +3,7 @@ import { Tiket } from "../Types/Ticket"
 import UseGetList from "../Hooks/UseChargeRoutes"
 import { useEffect } from "react"
 
-const ListRutas = ({ register }: { register: UseFormRegister<Tiket>}) => {
+const ListRutas2 = ({ register }: { register: UseFormRegister<Tiket>}) => {
     const { getListRutas, rutas } = UseGetList()
 
     useEffect(() => {
@@ -14,11 +14,11 @@ const ListRutas = ({ register }: { register: UseFormRegister<Tiket>}) => {
         <>
             <div>
                 <select title='Origen' id=""
-                    {...register(`departurePoint`)}
+                    {...register(`ArrivalPoint`)}
                 >
                     {rutas?.map((Rutas, index) => (
                         <option key={index} value={Rutas.id.toString()}>
-                            {Rutas.departurePoint}
+                            {Rutas.ArrivalPoint}
                         </option>
                     ))}
                 </select>
@@ -26,5 +26,4 @@ const ListRutas = ({ register }: { register: UseFormRegister<Tiket>}) => {
         </>
     )
 }
-
-export default ListRutas
+export default ListRutas2

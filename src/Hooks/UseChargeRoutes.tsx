@@ -1,8 +1,9 @@
 import { useState, useCallback } from "react";
-import { Ruta } from "../Types/Ruta";
+import getListaRutas from "../Services/Tickets";
+import { Tiket } from "../Types/Ticket";
 
 const UseGetList = () => {
-    const [rutas, setRutas] = useState<Ruta[]>([]);
+    const [rutas, setRutas] = useState<Tiket[]>([]);
 
     const getListRutas = useCallback(async () => {
         try {
