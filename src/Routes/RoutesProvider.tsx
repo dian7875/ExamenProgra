@@ -1,15 +1,17 @@
 import { createBrowserRouter } from "react-router-dom"
+import TablaRutas from "../Components/TablaRutas"
+import Home from "../Components/Home"
 
 const RoutesProvider = createBrowserRouter(
 
     [
         {
           path: "/",
-          element: < />
+          element: <Home/>
         },
         {
-          path: "/Login",
-          element: < />
+          path: "/TablaRutas",
+          element: <TablaRutas/>
         }
       ]
 )

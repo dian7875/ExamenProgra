@@ -1,0 +1,24 @@
+------
+tiquet
+ruta
+
+
+
+
+-Precio por back
+
+
+--Endpoint
+CalcularPrecio(obtenrPrecio)
+
+Conteo de filas de cuantas personas han viajado 
+
+Por ruta y Por fecha
+
+sumatoria de dinero por ruta
+
+Recolectado por fecha
+
+
+
+
