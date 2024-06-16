@@ -1,12 +1,13 @@
-import './App.css'
-import Home from './Components/Home'
+import { RouterProvider } from 'react-router-dom'
+import Routes from './Routes/Routes'
 
 function App() {
 
   return (
     <>
-    Hola
-    <Home/>
+      <div className='h-screen'>
+        <RouterProvider router={Routes} />
+      </div>
     </>
   )
 }
