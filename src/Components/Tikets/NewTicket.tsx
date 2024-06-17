@@ -5,17 +5,14 @@ import { NewCreateTicket } from "../../Types/Ticket"
 import UseNewTicket from "../../Hooks/Tickets/UseNewTicket"
 
 const NewTicket = () => {
-    const{register, handleSubmit, setValue}=useForm<NewCreateTicket>()
-    const {onSubmit}=UseNewTicket();
+    const { register, handleSubmit, setValue } = useForm<NewCreateTicket>()
+    const { onSubmit } = UseNewTicket();
 
-    const handleDateChange = (date:Date) => {
-
+    const handleDateChange = (date: Date) => {
         const format = date.toISOString().split('T')[0]
-        console.log(format)
+        setValue('date', format)
+    };
 
-        setValue('date',format)
-      };
-    
     return (
         <>
             <div className=" pt-10">
@@ -25,7 +22,7 @@ const NewTicket = () => {
                     </div>
                     <div className="w-1/4 flex flex-col gap-4">
                         <span className="text-2xl text-center">Travel Date</span>
-                        <Datepicker onSelectedDateChanged={handleDateChange}/>
+                        <Datepicker onSelectedDateChanged={handleDateChange} />
                     </div>
                     <div className="w-full flex justify-center">
                         <button

@@ -2,7 +2,7 @@ import { NewCreateTicket } from "../../Types/Ticket";
 
 const urlBase ="https:/localhost:7088/api/"
 
-const createAppointment = async (Data: NewCreateTicket) => {
+const createTicket = async (Data: NewCreateTicket) => {
 
     const response = await fetch(`${urlBase}Tickets`, {
       method: 'POST',
@@ -19,4 +19,4 @@ const createAppointment = async (Data: NewCreateTicket) => {
     return response.status
   };
 
-  export {createAppointment}
+  export {createTicket}

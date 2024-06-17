@@ -1,5 +1,3 @@
-import { UseFormRegister } from "react-hook-form";
-import { NewCreateTicket } from "./Ticket";
 
 export type optionsRoutes ={
   id:number,
@@ -7,6 +5,15 @@ export type optionsRoutes ={
   text:string
 }
 
-export interface RegisterOptions {
-  register?: UseFormRegister<NewCreateTicket>;
+
+export type ReportResult={
+  passengerCount:number
+  totalMoney:number
+}
+
+export type ReportParamet={
+  start:string
+  end:string
+  arrivalPoint:string
+  departurePoint:string
 }
