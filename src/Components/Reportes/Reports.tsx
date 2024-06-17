@@ -76,7 +76,7 @@ const Reports = () => {
                         <span>Routes And Date Results</span> <br />
                         <label htmlFor="">Money: $ {GReportData?.totalMoney} </label>
                         <br />
-                        <label htmlFor="">People Count: {GReportData?.totalMoney} </label>
+                        <label htmlFor="">People Count: {GReportData?.passengerCount} </label>
                     </span>
                 </div>
             </form>
