@@ -1,12 +1,31 @@
+import { Datepicker } from "flowbite-react"
 import ListTravelRoutes from "../ListTravelRoutes"
+import { useForm } from "react-hook-form"
+import { NewCreateTicket } from "../../Types/Ticket"
+import UseNewTicket from "../../Hooks/Tickets/UseNewTicket"
 
 const NewTicket = () => {
+    const{register, handleSubmit, setValue}=useForm<NewCreateTicket>()
+    const {onSubmit}=UseNewTicket();
+
+    const handleDateChange = (date:Date) => {
+
+        const format = date.toISOString().split('T')[0]
+        console.log(format)
+
+        setValue('date',format)
+      };
+    
     return (
         <>
             <div className=" pt-10">
-                <form className="flex justify-center items-center flex-col gap-8 w-full">
+                <form onSubmit={handleSubmit(onSubmit)} className="flex justify-center items-center flex-col gap-8 w-full">
                     <div className="flex items-center justify-center gap-5 w-full">
-                        <ListTravelRoutes />
+                        <ListTravelRoutes register={register} />
+                    </div>
+                    <div className="w-1/4 flex flex-col gap-4">
+                        <span className="text-2xl text-center">Travel Date</span>
+                        <Datepicker onSelectedDateChanged={handleDateChange}/>
                     </div>
                     <div className="w-full flex justify-center">
                         <button

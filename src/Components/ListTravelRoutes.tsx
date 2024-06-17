@@ -1,18 +1,22 @@
-const ListTravelRoutes = () => {
+import UseGetRoutesList from "../Hooks/Routes/UseGetRoutesList"
+import { RegisterOptions } from "../Types/Rutas"
+
+const ListTravelRoutes = ({register}:RegisterOptions) => {
+    const{Options}=UseGetRoutesList()
     return (
         <>
             <label className="text-2xl text-center" htmlFor="">Depure Point</label>
-            <select className=" rounded-md border-slate-300" title="Depure">
-                <option value="A">Point A</option>
-                <option value="B">Point B</option>
-                <option value="C">Point C</option>
-                <label htmlFor="">Arrival Point</label>
+            <select 
+             {...register?.("departurePoint")}
+            className=" rounded-md border-slate-300" title="Depure">
+                 <option value="">Please Select</option>
+                {Options()}
             </select>
             <label className="text-2xl text-center" htmlFor="">Arrival Point</label>
-            <select className=" rounded-md border-slate-300" title="Arivall">
-                <option value="A">Point A</option>
-                <option value="B">Point B</option>
-                <option value="C">Point C</option>
+            <select  {...register?.("arrivalPoint")}
+             className=" rounded-md border-slate-300" title="Arivall">
+                <option value="">Please Select</option>
+                {Options()}
             </select>
         </>
     )

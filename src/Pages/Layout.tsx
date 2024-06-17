@@ -1,20 +1,23 @@
 import { Link, Outlet } from "react-router-dom"
+import UseGetMenuElement from "../Hooks/Menu/UseGetMenuElement"
 
 const Layout = () => {
+  const { elements, isLoading } = UseGetMenuElement()
+  if (isLoading) {
+    <div className="flex items-center justify-center h-screen">
+      <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+    </div>
+  }
   return (
     <>
       <nav className="w-full flex justify-center items-center text-3xl pt-3 mb-10 gap-10">
-        <Link to={'/Tickets'}>
-          <button className="hover:scale-105 hover:text-blue-400" type="button">
-            Create Ticket
-          </button>
-        </Link>
-        <Link to={'/List'}>
-          <button className=" hover:scale-105 hover:text-red-400
-                            " type="button">
-            Tikets List
-          </button>
-        </Link>
+        {elements.map(item => (
+          <Link key={item.id} to={item.path}>
+            <button className="hover:scale-105 hover:text-blue-400" type="button">
+              {item.title}
+            </button>
+          </Link>
+        ))}
       </nav>
       <Outlet />
     </>
